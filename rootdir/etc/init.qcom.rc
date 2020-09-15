@@ -1093,7 +1093,8 @@ service minimedia /system/bin/minimediaservice
 service miniafservice /system/bin/miniafservice
     class core
     user root
-    group audio    
+    group audio 
+    disable   
 
 on property:gsm.version.baseband=""
     start baseband-sh
