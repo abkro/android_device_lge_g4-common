@@ -490,7 +490,7 @@ on post-fs-data
     chmod 0660 /data/hostapd/hostapd.conf
 
     # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
+    mkdir /data/time/ 0777 system system
 
     mkdir /data/audio/ 0770 media audio
 
@@ -965,6 +965,8 @@ service time_daemon /system/bin/time_daemon
     class late_start
     user root
     group root
+    writepid /dev/cpuset/system-background/tasks
+    disabled
 
 service adsprpcd /system/bin/adsprpcd
    class main
@@ -1088,7 +1090,7 @@ service minimedia /system/bin/minimediaservice
     group audio camera
     ioprio rt 4
 #   hack to make recorded video playback work
-    setenv LD_PRELOAD /system/lib/libOmxVdec.so
+#    setenv LD_PRELOAD /system/lib/libOmxVdec.so
 
 service miniafservice /system/bin/miniafservice
     class core
