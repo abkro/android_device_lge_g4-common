@@ -45,9 +45,6 @@ lib64/libmotext_inf.so
 -lib64/libloc_ds_api.so
 -lib64/libcir_driver.so
 lib64/libmdmcutback.so
--app/TimeService/TimeService.apk
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
--priv-app/com.qualcomm.location/com.qualcomm.location.apk
 vendor/bin/LKCore
 vendor/bin/perfd
 vendor/bin/audioflacapp
@@ -737,11 +734,6 @@ lib/libarcsoft_beauty_shot.so
 -lib/libcir_driver.so
 lib/libalhdri.so
 lib/libmdmcutback.so
--framework/com.qti.location.sdk.jar
--framework/com.qti.snapdragon.sdk.display.jar
--framework/qcrilhook.jar
--framework/izat.xt.srv.jar
--framework/qcnvitems.jar
 etc/data/netmgr_config.xml
 etc/data/qmi_config.xml
 etc/data/dsi_config.xml
