@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!-- Copyright (C) 2016 The Android Open Source Project
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
           http://www.apache.org/licenses/LICENSE-2.0
-
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -44,21 +41,21 @@
                              samplingRates="48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
-<!--                <mixPort name="deep_buffer" role="source"
+<!--                 <mixPort name="deep_buffer" role="source"
                         flags="AUDIO_OUTPUT_FLAG_DEEP_BUFFER">
                     <profile name=""
                              format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="44100,48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </mixPort>
--->
-                <mixPort name="low_latency" role="source"
+                </mixPort> -->
+<!--                <mixPort name="low_latency" role="source"
                         flags="AUDIO_OUTPUT_FLAG_FAST">
                     <profile name=""
                              format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="44100,48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </mixPort>
+                </mixPort> -->
+
                 <mixPort name="compressed_offload" role="source"
                          flags="AUDIO_OUTPUT_FLAG_DIRECT|AUDIO_OUTPUT_FLAG_COMPRESS_OFFLOAD|AUDIO_OUTPUT_FLAG_NON_BLOCKING">
                     <profile name="" format="AUDIO_FORMAT_MP3"
@@ -80,7 +77,6 @@
                              format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,16000,48000"
                              channelMasks="AUDIO_CHANNEL_OUT_MONO,AUDIO_CHANNEL_OUT_STEREO"/>
-
                 </mixPort>
 -->
                 <mixPort name="voice_tx" role="source">
@@ -203,8 +199,8 @@
                 </devicePort>
                 <devicePort tagName="Telephony Rx" type="AUDIO_DEVICE_IN_TELEPHONY_RX" role="source">
                 </devicePort>
-                <devicePort tagName="In Call-Voice" type="AUDIO_DEVICE_IN_VOICE_CALL" role="source">
-                </devicePort> 
+                <!-- <devicePort tagName="In Call-Voice" type="AUDIO_DEVICE_IN_VOICE_CALL" role="source">
+                </devicePort> -->
             </devicePorts>
             <routes>
                 <route type="mix" sink="Earpiece"
@@ -226,7 +222,7 @@
                 <route type="mix" sink="Telephony Tx"
                        sources="voice_tx"/>
                 <route type="mix" sink="primary_input"
-                       sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,BT SCO Headset Mic,In Call-Voice"/>
+                       sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,BT SCO Headset Mic"/> <!-- ,In Call-Voice"/> -->
                 <route type="mix" sink="voice_rx"
                        sources="Telephony Rx"/>
             </routes>
